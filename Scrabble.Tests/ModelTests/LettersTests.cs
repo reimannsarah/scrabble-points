@@ -4,13 +4,21 @@ using Scrabble.Models;
 namespace Scrabble.Test
 {
   [TestClass]
-  public class Letters
+  public class LettersTest
   {
+    // [TestMethod]
+    //   public void LettersConstructor_CreatesInstanceOfDictionary_Letters()
+    //   {
+    //   Letters letterPoints = new Letters();
+    //   Assert.AreEqual(typeof(Letters), letterPoints.GetType());
+    // }
     [TestMethod]
-      public void LettersConstructor_CreatesInstanceOfDictionary_Letters()
+      public void LettersConstructor_CreatesInstanceOfDictionaryWithKeyValuePairs_Letters()
       {
+      char[] expected = new char[]{'q','z'};
       Letters letterPoints = new Letters();
-      Assert.AreEqual(typeof(Letters), letterPoints.GetType());
+      CollectionAssert.AreEqual(expected, Letters.Points[10]);
     }
+
   }
 }
